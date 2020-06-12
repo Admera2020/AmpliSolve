@@ -661,7 +661,7 @@ int generateReferenceBases(char *panelDesign, char *referenceGenome,char *result
     myExec(command);
 
     memset(command,0,500);
-    sprintf(command,"sort %s/%d_panelReferenceBases.txt | uniq -d | cut -d$'\t' -f1,2 > %s/%d_ampliconDuplicatedPositions.txt",results_dir,seed,results_dir,seed);
+    sprintf(command,"sort %s/%d_panelReferenceBases.txt | uniq -d | cut -d -f1,2 > %s/%d_ampliconDuplicatedPositions.txt",results_dir,seed,results_dir,seed);
     myExec(command);
 
     //write an output message at the end
